@@ -1,0 +1,72 @@
+<html><head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<title>ATH Mobile Demo Cart</title>
+	</head><body>
+		
+		<div class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><img style="width: 24px; float: left; margin-right: 12px; margin-bottom:2px" src="img/imaginary.png"><span>Imaginary Store - Using ATH Móvil</span><br></a></div><div class="collapse navbar-collapse" id="navbar-ex-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="#">Home</a></li><li><a href="#">Products</a></li><li><a href="#">Specials</a></li><li class="active"><a href="#">Cart</a></li></ul></div></div></div>
+		<form>
+			<div class="section">
+				<div class="container">
+					<div class="row">
+					<h1 class="text-primary">Cart</h1>
+						<table style="margin-left: 120px">
+							<tbody>
+								<tr>
+									<td>
+										<img src="img/item_1.png" style="max-height: auto" class="img-responsive">
+									</td>
+									<td style="padding-left: 50px" align="top">
+										<h2 class="text-primary">Teleprompter by Imaginary Films</h2>
+										<p>Teleprompter" is a professional grade, multi-platform, free software teleprompter for anyone to use.</p>
+										<p class="amountContainer">Amount:
+											<input class="amount" type="number" value="1">
+										</p>
+									<td>
+										Price: $<span class="price">19.99</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img src="img/item_2.png" style="max-height: auto" class="img-responsive">
+									</td>
+									<td style="padding-left: 50px" align="top">
+										<h2 class="text-primary">Duplex Printer</h2>
+										<p>Multi-platform virtual printer. It standarizes printer UIs accross several operating systems and emulates ecological features such as duplex printing, color mapping and dpi control.</p>
+										<p class="amountContainer">Amount:
+											<input class="amount" type="number" value="1">
+										</p>
+									</td>
+									<td>
+										Price: $<span class="price">4.99</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+									</td>
+									<td>
+										<button id="update"><h4>Update items</h4></button>
+										<h3 id="totalContainer">Total: $<span id="total">24.98</span></h3>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div id="checkoutArea">
+				<button id="continueShopping"><h4>Continue Shopping</h4></button>
+				<button class="fancybox" href="#qrcode" id="checkout"><h4>Proceed to Checkpout</h4></button>
+			</div>
+			<br><br><br><br>
+		</form>
+		<footer class="section section-primary"> <div class="container"> <div class="row"> <div class="col-sm-6"> <h1>Imaginary Store</h1> <p>Powered by ATH Móvil</p></div><div class="col-sm-6"> <p class="text-info text-right"> <br><br></p><div class="row"> <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left"> <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> </div></div><div class="row"> <div class="col-md-12 hidden-xs text-right"> <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a> <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> </div></div></div></div></div></footer>
+</body>
+	<script type="text/javascript" src="js/cart.js"></script>
+</html>

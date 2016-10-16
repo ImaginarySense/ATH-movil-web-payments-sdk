@@ -1,0 +1,46 @@
+button,input {
+	background: #FFF;
+}
+table {
+	margin: auto;
+    border-collapse:separate;
+    border-spacing: 30px 30px;
+    width: 70%;
+}
+.lr {
+	float: right;
+	width: 50%;
+}
+#totalContaine>td {
+	width: 50%;
+}
+.amountContainer {
+	float: right;
+	margin-right: 25px;
+}
+.amountContainer input {
+	width: 100px;
+}
+#update {
+	top: 10px;
+	float: left;
+}
+#checkoutArea {
+	float: right;
+	width: 80%;
+}
+#checkoutArea button {
+	min-width: 280px;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+#paymentMethods {
+	padding-top: 50px;
+	text-align: center;
+}
+#totalContainer {
+	float: right;
+}
+#total {
+	display: inline-block;
+}
