@@ -17,13 +17,13 @@
 
   // HTTP Server Constants
   var bundleId = "imaginaryStore", // Identif name
-    phone = "787-123-1234", // Commercial ATH Móvil Phone Number, for use in API
+    storeName = "Salaera", // Commercial ATH Móvil Phone Number, for use in API
     ref_id = sessionStorage.ref_id,
     auth_key = "80fcfafc18a1f6d6ad82c95b994401b6", // Store ID, for use in Transaction
     // Client variables
     qrcode; // do not init
   console.log({ref_id,auth_key});
-  
+
   // Getters
   function setSubtotal() {
     subtotal = parseFloat( sessionStorage.orderSubtotal );
@@ -57,19 +57,39 @@
   }
 
   function payUsingATHMovil() {
-    // Generate QR
-    var response = { };
-    response.bundleId = bundleId; // From http server
-    response.phone = phone; // From http server
-    response.ref_id = ref_id; //_ From API server
-    response.auth_key = auth_key; //_ From API server
-    response.amount = total; // From Web Client
-    
-    // Show QR
-    showQR( response );
+    $.ajax({
+      url: 'http://www.salaera.com/v2/request.php',
+      type: 'get',
+      success: function (data) {
 
-    // Wait for QR
-    waitForQR();
+        /*var textJson = '{"token":"' + data.token +'",\
+  			 "expDate":"' + data.expDate + '",\
+  			 "amount":"'+ total +'",\
+  			 "transaction":"' + ref_id +'",\
+  			 "storeName":"' + storeName + '",\
+  			 "bundleId":"' + bundleId + '",\
+  			 "auth_key":"' + auth_key + '"\
+       }';*/
+
+        // Generate QR
+        var response = { };
+        response.token = data.token;
+        response.expDate = data.expDate;
+        response.amount = total.toFixed(2).toString(); // From Web Client
+        response.transaction = ref_id; //_ From API server
+        response.storeName = storeName; //_ From API server
+        response.bundleId = bundleId; // From http server
+        response.auth_key = auth_key; //_ From API server
+
+
+  			//qrcode.makeCode(textJson);
+        // Show QR
+        showQR( response );
+
+        // Wait for QR
+        waitForQR();
+      }
+  	});
   }
 
   // QR generation should be server sided or this data be provided from the mentioned sources.
@@ -139,8 +159,8 @@
         correctLevel : QRCode.CorrectLevel.H
       });
     }
-    else if (!success)
-      alert("Failed to generate QR."); 
+    else
+      alert("Failed to generate QR.");
   }
 
   function showWaitingForPaymentInUI() {
